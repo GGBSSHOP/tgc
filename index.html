@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин наркоты</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+        }
+        
+        .shop-title {
+            font-size: 3.5rem;
+            color: #fff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+            font-weight: 300;
+        }
+        
+        .product-card {
+            background-color: #111;
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .photo {
+            transform: scale(1.03);
+        }
+        
+        .photo-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            font-size: 1.8rem;
+            border-radius: 5px;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .description {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+        
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .buy-button {
+            background-color: #4a00e0;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .buy-button:hover {
+            background-color: #8e2de2;
+            transform: scale(1.05);
+        }
+        
+        .details {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        .details-title {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .details-list {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .details-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .details-list li:before {
+            content: "•";
+            color: #8e2de2;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .shop-title {
+                font-size: 2.5rem;
+            }
+            
+            .photo-container {
+                height: 350px;
+            }
+            
+            .product-info {
+                padding: 20px;
+            }
+            
+            .description {
+                font-size: 1.1rem;
+            }
+            
+            .price {
+                font-size: 2rem;
+            }
+            
+            .buy-button {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .shop-title {
+                font-size: 2rem;
+            }
+            
+            .photo-container {
+                height: 250px;
+            }
+            
+            .photo-title {
+                font-size: 1.3rem;
+            }
+            
+            .price-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="shop-title">Магазин наркоты</h1>
+        </header>
+        
+        <main>
+            <div class="product-card">
+                <div class="photo-container">
+                    <img src="/storage/emulated/0/1.png" class="photo">
+                    <div class="photo-title">Кетамин 10 мл.</div>
+                </div>
+                
+                <div class="product-info">
+                    <p class="description">
+                        Не забываемые ощущения
+                    </p>
+                    
+                    <div class="price-section">
+                        <div>
+                            <div class="price">480.14 ₽</div>
+                            <div class="details">
+                                <div class="details-title">Детали:</div>
+                                <ul class="details-list">
+                                    <li>10 мл. чистого кайфа!</li>
+                                </ul>
+                                <ul class="details-list">
+                                    <li>15 х 5 минут трипа.</li>
+                                </ul>
+                                <ul class="details-list">
+                                    <li>В комплекте: упаковка, 5 ампул по 2 мл.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="buy-button">Купить сейчас</button>
+                    </div>
+                </div>
+            </div>
+    
+    <script>
+        // Добавляем интерактивность для кнопки покупки
+        document.querySelector('.buy-button').addEventListener('click', function() {
+            const productName = document.querySelector('.photo-title').textContent;
+            const price = document.querySelector('.price').textContent;
+            
+        // Создаем красивое модальное окно
+const modal = document.createElement('div');
+modal.innerHTML = `
+    <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    ">
+        <div style="
+            background: #;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        ">
+            <h3>Свяжитесь с нами в Telegram</h3>
+            <a href="https://t.me/Adekvat19" 
+               target="_blank"
+               style="
+                   display: inline-block;
+                   background: #000000;
+                   color: white;
+                   padding: 10px 20px;
+                   border-radius: 5px;
+                   text-decoration: none;
+                   margin: 10px 0;
+               ">
+                Открыть Telegram
+            </a>
+            <button onclick="this.parentElement.parentElement.remove()" 
+                     style="
+                   display: inline-block;
+                   background: #000000;
+                   color: white;
+                   padding: 10px 20px;
+                   border-radius: 5px;
+                   text-decoration: none;
+                   margin: 10px 0;
+               ">
+                Закрыть
+            </button>
+        </div>
+    </div>
+`;
+
+document.body.appendChild(modal);
+          
+            setTimeout(() => {
+                this.textContent = 'Купить сейчас';
+                this.style.backgroundColor = '#4a00e0';
+            }, 2000);
+        });
+        
+        // Эффект для заголовка магазина
+        const title = document.querySelector('.shop-title');
+        let hue = 0;
+        
+        // Функция для плавного изменения цвета заголовка
+        function updateTitleColor() {
+            hue = (hue + 0.5) % 360;
+            title.style.textShadow = `0 0 10px hsl(${hue}, 100%, 70%)`;
+            requestAnimationFrame(updateTitleColor);
+        }
+        
+        // Запускаем анимацию цвета
+        updateTitleColor();
+    </script>
+</body>
+</html>
