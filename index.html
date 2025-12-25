@@ -275,44 +275,59 @@ modal.innerHTML = `
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0,0,0,0.8);
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1000;
     ">
         <div style="
-            background: #;
-            padding: 20px;
-            border-radius: 10px;
+            background: #111;
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            max-width: 400px;
+            width: 90%;
         ">
-            <h3>Свяжитесь с нами в Telegram</h3>
+            <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem;">Свяжитесь с нами в Telegram</h3>
             <a href="https://t.me/Adekvat19" 
                target="_blank"
                style="
                    display: inline-block;
-                   background: #000000;
+                   background: #4a00e0;
                    color: white;
-                   padding: 10px 20px;
-                   border-radius: 5px;
+                   padding: 12px 30px;
+                   border-radius: 8px;
                    text-decoration: none;
                    margin: 10px 0;
-               ">
+                   font-weight: 600;
+                   font-size: 1.1rem;
+                   border: 2px solid #8e2de2;
+                   transition: all 0.3s ease;
+               "
+               onmouseover="this.style.backgroundColor='#8e2de2'; this.style.transform='scale(1.05)'"
+               onmouseout="this.style.backgroundColor='#4a00e0'; this.style.transform='scale(1)'">
                 Открыть Telegram
             </a>
-            <button onclick="this.parentElement.parentElement.remove()" 
+            <div style="margin-top: 20px;">
+                <button onclick="this.parentElement.parentElement.parentElement.remove()" 
                      style="
-                   display: inline-block;
-                   background: #000000;
-                   color: white;
-                   padding: 10px 20px;
-                   border-radius: 5px;
-                   text-decoration: none;
-                   margin: 10px 0;
-               ">
-                Закрыть
-            </button>
+                        background: transparent;
+                        color: #aaa;
+                        padding: 10px 25px;
+                        border-radius: 8px;
+                        border: 1px solid #333;
+                        cursor: pointer;
+                        font-size: 1rem;
+                        transition: all 0.3s ease;
+                     "
+                     onmouseover="this.style.color='#fff'; this.style.borderColor='#666'"
+                     onmouseout="this.style.color='#aaa'; this.style.borderColor='#333'">
+                    Закрыть
+                </button>
+            </div>
         </div>
     </div>
 `;
