@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин наркоты</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+        <style>
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('font.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'MyCustomFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .site-title, .page-btn {
+            font-family: 'MyCustomFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+    </style>
+    
     <style>
+    
         * {
     -webkit-tap-highlight-color: transparent;
         }
@@ -233,12 +252,12 @@
                 
                 <div class="product-info">
                     <p class="description">
-                        Не забываемые ощущения
+                        Не забываемые ощущения.
                     </p>
                     
                     <div class="price-section">
                         <div>
-                            <div class="price">480.14 ₽</div>
+                            <div class="price">480.14 руб.</div>
                             <div class="details">
                                 <div class="details-title">Детали:</div>
                                 <ul class="details-list">
@@ -252,104 +271,147 @@
                                 </ul>
                             </div>
                         </div>
-                        <button class="buy-button">Купить сейчас</button>
+                        <button class="buy-button custom-font">
+  <p>
+    Купить сейчас
+    <img src="2.svg" alt="иконка" style="vertical-align: -5.9px; margin-left: 0px;">
+  </p>
+</button>
+
+<style>
+    .custom-font {
+        font-family: 'MyCustomFont', sans-serif;
+    }
+</style>
                     </div>
                 </div>
             </div>
     
     <script>
-        // Добавляем интерактивность для кнопки покупки
-        document.querySelector('.buy-button').addEventListener('click', function() {
-            const productName = document.querySelector('.photo-title').textContent;
-            const price = document.querySelector('.price').textContent;
-            
+    // Сохраняем исходное состояние кнопки
+    let originalButtonState = null;
+    
+    // Добавляем интерактивность для кнопки покупки
+    document.querySelector('.buy-button').addEventListener('click', function() {
+        // Сохраняем текущее состояние кнопки перед изменениями
+        originalButtonState = this.innerHTML;
+        
         // Создаем красивое модальное окно
-const modal = document.createElement('div');
-modal.innerHTML = `
-    <div style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    ">
-        <div style="
-            background: #111;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-            max-width: 400px;
-            width: 90%;
-        ">
-            <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem;">Свяжитесь с нами в Telegram</h3>
-            <a href="https://t.me/Adekvat19" 
-               target="_blank"
-               style="
-                   display: inline-block;
-                   background: #4a00e0;
-                   color: white;
-                   padding: 12px 30px;
-                   border-radius: 8px;
-                   text-decoration: none;
-                   margin: 10px 0;
-                   font-weight: 600;
-                   font-size: 1.1rem;
-                   border: 2px solid #8e2de2;
-                   transition: all 0.3s ease;
-               "
-               onmouseover="this.style.backgroundColor='#8e2de2'; this.style.transform='scale(1.05)'"
-               onmouseout="this.style.backgroundColor='#4a00e0'; this.style.transform='scale(1)'">
-                Открыть Telegram
-            </a>
-            <div style="margin-top: 20px;">
-                <button onclick="this.parentElement.parentElement.parentElement.remove()" 
-                     style="
-                        background: transparent;
-                        color: #aaa;
-                        padding: 10px 25px;
-                        border-radius: 8px;
-                        border: 1px solid #333;
-                        cursor: pointer;
-                        font-size: 1rem;
-                        transition: all 0.3s ease;
-                     "
-                     onmouseover="this.style.color='#fff'; this.style.borderColor='#666'"
-                     onmouseout="this.style.color='#aaa'; this.style.borderColor='#333'">
-                    Закрыть
-                </button>
+        const modal = document.createElement('div');
+        modal.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                font-family: 'MyCustomFont', sans-serif;
+            ">
+                <div style="
+                    background: #111;
+                    padding: 30px;
+                    border-radius: 15px;
+                    text-align: center;
+                    border: 1px solid #333;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+                    max-width: 400px;
+                    width: 90%;
+                ">
+                    <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem;">Свяжитесь с нами в Telegram</h3>
+                    <a href="https://t.me/Adekvat19" 
+                       target="_blank"
+                       style="
+                           display: inline-block;
+                           background: #4a00e0;
+                           color: white;
+                           padding: 12px 30px;
+                           border-radius: 8px;
+                           text-decoration: none;
+                           margin: 10px 0;
+                           font-weight: 600;
+                           font-size: 1.1rem;
+                           border: 2px solid #8e2de2;
+                           transition: all 0.3s ease;
+                       "
+                       onmouseover="this.style.backgroundColor='#8e2de2'; this.style.transform='scale(1.05)'"
+                       onmouseout="this.style.backgroundColor='#4a00e0'; this.style.transform='scale(1)'">
+                        <p>
+    Открыть telegram
+    <img src="1.svg" alt="иконка" style="vertical-align: -5.9px; margin-left: 1px;">
+  </p>
+                    </a>
+                    <div style="margin-top: 20px;">
+                        <button id="closeModalBtn" 
+                             style="
+                                background: transparent;
+                                color: #aaa;
+                                padding: 10px 25px;
+                                border-radius: 8px;
+                                border: 1px solid #333;
+                                cursor: pointer;
+                                font-size: 1rem;
+                                transition: all 0.3s ease;
+                                font-family: 'MyCustomFont', sans-serif;
+                             "
+                             onmouseover="this.style.color='#fff'; this.style.borderColor='#666'"
+                             onmouseout="this.style.color='#aaa'; this.style.borderColor='#333'">
+                            Закрыть
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-`;
+        `;
 
-document.body.appendChild(modal);
-          
-            setTimeout(() => {
-                this.textContent = 'Купить сейчас';
-                this.style.backgroundColor = '#4a00e0';
-            }, 2000);
+        document.body.appendChild(modal);
+        
+        // Добавляем обработчик для кнопки закрытия
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            // Удаляем модальное окно
+            modal.remove();
+            
+            // Восстанавливаем кнопку в исходное состояние
+            if (originalButtonState) {
+                document.querySelector('.buy-button').innerHTML = originalButtonState;
+                
+                // Снова вешаем обработчик клика
+                document.querySelector('.buy-button').addEventListener('click', handleBuyButtonClick);
+            }
         });
         
-        // Эффект для заголовка магазина
-        const title = document.querySelector('.shop-title');
-        let hue = 0;
-        
-        // Функция для плавного изменения цвета заголовка
-        function updateTitleColor() {
-            hue = (hue + 0.5) % 360;
-            title.style.textShadow = `0 0 10px hsl(${hue}, 100%, 70%)`;
-            requestAnimationFrame(updateTitleColor);
+        // Убираем setTimeout который ломает иконку
+        // Вместо этого сразу меняем кнопку, но БЕЗ УДАЛЕНИЯ ИКОНКИ
+        const button = this;
+        const pElement = button.querySelector('p');
+        if (pElement) {
+            // Просто меняем цвет, не трогая содержимое
+            button.style.backgroundColor = '#4a00e0';
+            
+            // Если всё же нужно изменить текст, делаем это аккуратно:
+            const textNode = pElement.childNodes[0];
+            if (textNode && textNode.nodeType === 3) {
+                textNode.textContent = 'Купить сейчас ';
+            }
         }
-        
-        // Запускаем анимацию цвета
-        updateTitleColor();
-    </script>
+    });
+    
+    // Эффект для заголовка магазина
+    const title = document.querySelector('.shop-title');
+    let hue = 0;
+    
+    // Функция для плавного изменения цвета заголовка
+    function updateTitleColor() {
+        hue = (hue + 0.5) % 360;
+        title.style.textShadow = `0 0 10px hsl(${hue}, 100%, 70%)`;
+        requestAnimationFrame(updateTitleColor);
+    }
+    
+    // Запускаем анимацию цвета
+    updateTitleColor();
+</script>
 </body>
 </html>
